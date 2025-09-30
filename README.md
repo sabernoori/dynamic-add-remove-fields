@@ -9,67 +9,76 @@ A lightweight, flexible JavaScript library for dynamically adding and removing f
 
 This library is specifically designed to work seamlessly with **Webflow** without any build process or dependencies. Simply add the script and start using dynamic fields in your Webflow projects!
 
-### Quick Webflow Setup (3 Steps)
+### 🎯 Get Started Instantly
+<div align="center">
+<a href="https://webflow.com/made-in-webflow/website/add-or-remove-input" target="_blank">
+<img src="https://img.shields.io/badge/Get%20Webflow%20Clonable-4353FF?style=for-the-badge&logo=webflow&logoColor=white" alt="Get Webflow Clonable">
+</a>
+</div>
 
-1. **Add the Script**: In your Webflow project settings → Custom Code → Footer Code:
+### How to Use (5 Simple Steps)
+
+**1. Add the following as script in your page's before `</body>` tag:**
+
 ```html
+<!-- Include the dynamic fields script -->
 <script src="https://cdn.jsdelivr.net/gh/sabernoori/dynamic-add-remove-fields@v3.0.0/src/dynamic-fields.js"></script>
-```
 
-2. **Structure Your Form in Webflow Designer**:
-   
-   **Step 2a: Create the Form**
-   - Drag a Form Block from the Add Panel
-   - Give your form a unique ID (e.g., `contact-form`)
-   - In Form Settings → Element Settings → ID field, enter your form ID
-   
-   **Step 2b: Create the Field Group Container**
-   - Inside the form, add a Div Block
-   - Add class name whatever you want.
-   - In Element Settings → Custom Attributes:
-     - Name: `data-group-name`
-     - Value: `education` (or your preferred group name)
-   
-   **Step 2c: Add Your Input Fields**
-   - Inside the field-group div, add your input fields
-   - Name them with numbers: `education-degree-1`, `education-school-1`, etc.
-   - These will be cloned when users add more fields
-   
-   **Step 2d: Add Control Buttons**
-   - Add a Button element with class: `add-field-btn`
-   - Set button text to "Add Education" (or relevant text)
-   - Add another Button element with class: `remove-field-btn`
-   - Set button text to "Remove"
-   - Set both buttons Type to "Button" (not Submit)
-
-3. **Initialize the Library**: Add this script in Custom Code → Footer Code (after the library script):
-```html
+<!-- Initialize DynamicFields / You can modify with your naming convention -->
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    new DynamicFields({
-        formId: 'contact-form',        // Your Webflow form ID
-        groupName: 'education',        // Match your data-group-name
-        fieldPrefix: 'education'       // Prefix for field names
+    document.addEventListener('DOMContentLoaded', function() {
+        new DynamicFields({
+            formId: 'wf-form-education',   // Your Webflow form ID
+            groupName: 'education',        // Match your data-group-name
+            fieldPrefix: 'education'       // Prefix for field names
+        });
     });
-});
 </script>
 ```
+
+**2. Create a form with desired input fields.** Give your form a unique ID. You can do that In Form Settings → Element Settings → ID field, enter your form ID. (in our case we used `wf-form-education`)
+
+**3. Inside the form, add a Div Block** and Add class name whatever you want. Put inputs your need and configure them however you want.
+
+Then do these In Element Settings → Custom Attributes:
+- **Name:** `data-field-group`
+- **Value:** keep it empty
+- **Name:** `data-group-name`
+- **Value:** `education` (or your preferred group name, we used this to seem like the example we have.)
+
+**4. Add Button elements for controlling the fields:**
+
+**For the Add Button:**
+- Add a Button element for adding the fields
+- Set button text to "Add Education" (or relevant text)
+- In Element Settings → Custom Attributes:
+  - **Name:** `data-add-btn`
+  - **Value:** keep it empty
+
+**For the Remove Button:**
+- Add another Button element for removing the fields
+- Set button text to "Remove"
+- In Element Settings → Custom Attributes:
+  - **Name:** `data-remove-btn`
+  - **Value:** keep it empty
 
 **Complete Webflow HTML Structure Example:**
 ```html
 <!-- This is what your Webflow structure should look like -->
-<form id="contact-form" class="w-form">
-    <div class="field-group" data-group-name="education">
+<form id="wf-form-education" class="w-form">
+    <div data-field-group data-group-name="education">
         <!-- Your input fields (these get cloned) -->
         <input type="text" name="education-degree-1" placeholder="Degree" class="w-input">
         <input type="text" name="education-school-1" placeholder="School" class="w-input">
         
         <!-- Control buttons -->
-        <button type="button" class="add-field-btn w-button">Add Education</button>
-        <button type="button" class="remove-field-btn w-button">Remove</button>
+        <button type="button" data-add-btn class="w-button">Add Education</button>
+        <button type="button" data-remove-btn class="w-button">Remove</button>
     </div>
 </form>
 ```
+
+**5. Publish & Enjoy!**
 
 
 ---
