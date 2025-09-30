@@ -25,7 +25,7 @@ This library is specifically designed to work seamlessly with **Webflow** withou
    
    **Step 2b: Create the Field Group Container**
    - Inside the form, add a Div Block
-   - Add class name: `field-group`
+   - Add class name whatever you want.
    - In Element Settings → Custom Attributes:
      - Name: `data-group-name`
      - Value: `education` (or your preferred group name)
