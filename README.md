@@ -3,7 +3,46 @@
 A lightweight, flexible JavaScript library for dynamically adding and removing form fields with support for multiple groups and forms.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Version](https://img.shields.io/badge/version-3.0.0-blue.svg)](https://github.com/yourusername/dynamic-fields)
+[![Version](https://img.shields.io/badge/version-3.0.0-blue.svg)](https://github.com/sabernoori/dynamic-add-remove-fields)
+
+## 🚀 Perfect for Webflow Users!
+
+This library is specifically designed to work seamlessly with **Webflow** without any build process or dependencies. Simply add the script and start using dynamic fields in your Webflow projects!
+
+### Quick Webflow Setup (3 Steps)
+
+1. **Add the Script**: In your Webflow project settings → Custom Code → Footer Code:
+```html
+<script src="https://cdn.jsdelivr.net/gh/sabernoori/dynamic-add-remove-fields@v3.0.0/src/dynamic-fields.js"></script>
+```
+
+2. **Structure Your Form**: Use Webflow's form builder and add these classes/attributes:
+   - Form: Give it an ID (e.g., `contact-form`)
+   - Container div: Add class `field-group` and attribute `data-group-name="your-group-name"`
+   - Add button: Add class `add-field-btn`
+   - Remove button: Add class `remove-field-btn`
+
+3. **Initialize**: Add this script after the library:
+```html
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    new DynamicFields({
+        formId: 'contact-form',        // Your Webflow form ID
+        groupName: 'your-group-name',  // Match your data-group-name
+        fieldPrefix: 'field'           // Prefix for field names
+    });
+});
+</script>
+```
+
+### Webflow-Specific Benefits
+- ✅ **No Build Process** - Works directly in Webflow
+- ✅ **No Dependencies** - Pure vanilla JavaScript
+- ✅ **Designer Friendly** - Use Webflow's visual form builder
+- ✅ **Responsive** - Inherits your Webflow responsive design
+- ✅ **Form Submissions** - Works with Webflow's native form handling
+
+---
 
 ## Features
 
@@ -18,32 +57,38 @@ A lightweight, flexible JavaScript library for dynamically adding and removing f
 
 ## Installation
 
-### Option 1: Direct Download
-Download the `dynamic-fields.js` file from the `src/` directory and include it in your project:
+### Option 1: CDN (Recommended)
+```html
+<script src="https://cdn.jsdelivr.net/gh/sabernoori/dynamic-add-remove-fields@v3.0.0/src/dynamic-fields.js"></script>
+```
+
+### Option 2: Direct Download
+Download the `dynamic-fields.js` file from the [GitHub repository](https://github.com/sabernoori/dynamic-add-remove-fields) and include it in your project:
 
 ```html
 <script src="path/to/dynamic-fields.js"></script>
 ```
 
-### Option 2: NPM (Coming Soon)
+### Option 3: NPM
 ```bash
-npm install dynamic-fields
-```
-
-### Option 3: CDN (Coming Soon)
-```html
-<script src="https://cdn.jsdelivr.net/npm/dynamic-fields@3.0.0/src/dynamic-fields.js"></script>
+npm install dynamic-add-remove-fields
 ```
 
 ## Quick Start
 
-### Basic HTML Structure
+### HTML Structure with Comments
 ```html
 <form id="my-form">
+    <!-- Main container for the dynamic field group -->
     <div class="field-group" data-group-name="education">
+        <!-- Initial fields (these will be cloned when adding new fields) -->
         <input type="text" name="education-degree-1" placeholder="Degree">
         <input type="text" name="education-school-1" placeholder="School">
+        
+        <!-- Button to add more field sets (required class: add-field-btn) -->
         <button type="button" class="add-field-btn">Add Education</button>
+        
+        <!-- Button to remove current field set (required class: remove-field-btn) -->
         <button type="button" class="remove-field-btn">Remove</button>
     </div>
 </form>
@@ -167,37 +212,6 @@ const profileSkills = new DynamicFields({
 });
 ```
 
-## Event Handling
-
-DynamicFields provides event callbacks for field operations:
-
-```javascript
-const dynamicFields = new DynamicFields({
-    formId: 'my-form',
-    groupName: 'education',
-    fieldPrefix: 'education',
-    
-    // Event callbacks
-    onFieldAdded: function(newField, fieldCount) {
-        console.log('Field added:', newField);
-        console.log('Total fields:', fieldCount);
-    },
-    
-    onFieldRemoved: function(removedField, fieldCount) {
-        console.log('Field removed:', removedField);
-        console.log('Remaining fields:', fieldCount);
-    },
-    
-    onMaxFieldsReached: function(maxFields) {
-        alert(`Maximum of ${maxFields} fields allowed`);
-    },
-    
-    onMinFieldsReached: function(minFields) {
-        console.log(`Minimum of ${minFields} fields required`);
-    }
-});
-```
-
 ## HTML Structure Requirements
 
 ### Required Attributes
@@ -219,49 +233,6 @@ const dynamicFields = new DynamicFields({
         <button type="button" class="remove-field-btn">Remove</button>
     </div>
 </form>
-```
-
-## CSS Styling
-
-DynamicFields is CSS framework agnostic. Here's a basic styling example:
-
-```css
-.field-group {
-    margin-bottom: 20px;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-.field-group input {
-    margin: 5px;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-}
-
-.add-field-btn {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 3px;
-    cursor: pointer;
-}
-
-.remove-field-btn {
-    background-color: #dc3545;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 3px;
-    cursor: pointer;
-}
-
-.remove-field-btn:disabled {
-    background-color: #6c757d;
-    cursor: not-allowed;
-}
 ```
 
 ## API Reference
