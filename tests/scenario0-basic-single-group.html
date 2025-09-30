@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scenario 0: Basic Single Group - Test</title>
+    <style>
+        body {
+  color: #fff;
+  font-family: Open Sans, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+h1 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 38px;
+  font-weight: bold;
+  line-height: 44px;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.page_wrapper {
+  background-color: #0e0e0e;
+}
+
+.main_wrapper {
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+}
+
+.section_form {
+  grid-column-gap: 1.5rem;
+  grid-row-gap: 1.5rem;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 60rem;
+  min-height: 100vh;
+  padding: 2.5rem 1rem;
+  display: flex;
+}
+
+.input_group {
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+  border-bottom: 1px solid #333;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: flex;
+  transition: all 0.3s ease;
+}
+
+.input_text {
+  background-color: #0000;
+  border: 1px solid #494949;
+  border-radius: .5rem;
+  height: 3rem;
+  margin-bottom: 0;
+    color: #fff;
+
+}
+
+.input {
+  grid-column-gap: .5rem;
+  grid-row-gap: .5rem;
+  flex-flow: column;
+  width: 100%;
+  display: flex;
+}
+
+.form-block {
+  background-color: #202020;
+  border-radius: 1rem;
+  width: 100%;
+  margin-bottom: 0;
+  padding: 1rem;
+}
+
+.input_label {
+  font-size: .75rem;
+}
+
+.form {
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+}
+
+.buttons_group {
+  grid-column-gap: .5rem;
+  grid-row-gap: .5rem;
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+}
+
+.icon_wrapper {
+  aspect-ratio: 1;
+  flex: none;
+  justify-content: center;
+  align-items: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  display: flex;
+}
+
+.add-btn {
+  grid-column-gap: .5rem;
+  grid-row-gap: .5rem;
+  background-color: #3f3f3f;
+  border-radius: 3rem;
+  justify-content: flex-start;
+  align-items: center;
+  padding: .5rem 1rem .5rem .5rem;
+  display: flex;
+  transition: all 0.2s ease;
+}
+
+.add-btn:hover:not(.is-disabled) {
+  background-color: #5f5f5f;
+}
+
+.remove-btn {
+  grid-column-gap: .5rem;
+  grid-row-gap: .5rem;
+  background-color: #b10000;
+  border-radius: 3rem;
+  justify-content: flex-start;
+  align-items: center;
+  padding: .5rem 1rem .5rem .5rem;
+  display: flex;
+  transition: all 0.2s ease;
+}
+
+.remove-btn:hover:not(.is-disabled) {
+  background-color: #d10000;
+}
+
+.is-disabled {
+  background-color: #6c757d !important;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.submit-button {
+  background-color: #f04a3f;
+  border-radius: 3rem;
+  height: 3rem;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 991px) {
+  .section_form {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .input_group {
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+    flex-flow: column;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-columns: 1fr;
+    display: grid;
+  }
+}
+
+    </style>
+</head>
+<body>
+  <div class="page_wrapper">
+    <div class="main_wrapper">
+      <div class="section_form">
+        <h1><span class="text-span">Scenario 0:</span> Basic Single Group</h1>
+        <div>This test replicates the exact functionality of test2.html - a single field group for education entries.</div>
+        <div class="form-block w-form">
+          <form id="wf-form-education" name="wf-form-education" data-name="education" method="get" data-form-container="" class="form" data-wf-page-id="68db7ce5f4ca7c9fc02a5b1d" data-wf-element-id="8f801c6b-583c-d7a2-6c7d-2c744da6d115">
+            <div data-field-group="" class="input_group">
+              <div class="input">
+                <div class="input_label">School</div><input class="input_text w-input" maxlength="256" name="school" data-name="school" placeholder="Harward" type="text" id="school" required="">
+              </div>
+              <div class="input">
+                <div class="input_label">Degree</div><input class="input_text w-input" maxlength="256" name="degree" data-name="degree" placeholder="Bachelor" type="tel" id="degree" required="">
+              </div>
+              <div class="input">
+                <div class="input_label">Start Year</div><input class="input_text w-input" maxlength="256" name="start" data-name="start" placeholder="2000" type="text" id="start" required="">
+              </div>
+              <div class="input">
+                <div class="input_label">End Year(or expected)</div><input class="input_text w-input" maxlength="256" name="end" data-name="end" placeholder="2004" type="text" id="end" required="">
+              </div>
+            </div>
+            <div class="buttons_group">
+              <a data-add-btn="" href="#" class="add-btn w-inline-block">
+                <div class="icon_wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 24 24" fill="none">
+                    <path d="M12 22.75C6.07 22.75 1.25 17.93 1.25 12C1.25 6.07 6.07 1.25 12 1.25C17.93 1.25 22.75 6.07 22.75 12C22.75 17.93 17.93 22.75 12 22.75ZM12 2.75C6.9 2.75 2.75 6.9 2.75 12C2.75 17.1 6.9 21.25 12 21.25C17.1 21.25 21.25 17.1 21.25 12C21.25 6.9 17.1 2.75 12 2.75Z" fill="currentColor"></path>
+                    <path d="M16 12.75H8C7.59 12.75 7.25 12.41 7.25 12C7.25 11.59 7.59 11.25 8 11.25H16C16.41 11.25 16.75 11.59 16.75 12C16.75 12.41 16.41 12.75 16 12.75Z" fill="currentColor"></path>
+                    <path d="M12 16.75C11.59 16.75 11.25 16.41 11.25 16V8C11.25 7.59 11.59 7.25 12 7.25C12.41 7.25 12.75 7.59 12.75 8V16C12.75 16.41 12.41 16.75 12 16.75Z" fill="currentColor"></path>
+                  </svg></div>
+                <div>Add</div>
+              </a>
+              <a data-remove-btn="" href="#" class="remove-btn w-inline-block">
+                <div class="icon_wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 24 24" fill="none">
+                    <path d="M20.9999 6.72998C20.9799 6.72998 20.9499 6.72998 20.9199 6.72998C15.6299 6.19998 10.3499 5.99998 5.11992 6.52998L3.07992 6.72998C2.65992 6.76998 2.28992 6.46998 2.24992 6.04998C2.20992 5.62998 2.50992 5.26998 2.91992 5.22998L4.95992 5.02998C10.2799 4.48998 15.6699 4.69998 21.0699 5.22998C21.4799 5.26998 21.7799 5.63998 21.7399 6.04998C21.7099 6.43998 21.3799 6.72998 20.9999 6.72998Z" fill="currentColor"></path>
+                    <path d="M8.50001 5.72C8.46001 5.72 8.42001 5.72 8.37001 5.71C7.97001 5.64 7.69001 5.25 7.76001 4.85L7.98001 3.54C8.14001 2.58 8.36001 1.25 10.69 1.25H13.31C15.65 1.25 15.87 2.63 16.02 3.55L16.24 4.85C16.31 5.26 16.03 5.65 15.63 5.71C15.22 5.78 14.83 5.5 14.77 5.1L14.55 3.8C14.41 2.93 14.38 2.76 13.32 2.76H10.7C9.64001 2.76 9.62001 2.9 9.47001 3.79L9.24001 5.09C9.18001 5.46 8.86001 5.72 8.50001 5.72Z" fill="currentColor"></path>
+                    <path d="M15.2099 22.75H8.7899C5.2999 22.75 5.1599 20.82 5.0499 19.26L4.3999 9.19001C4.3699 8.78001 4.6899 8.42001 5.0999 8.39001C5.5199 8.37001 5.8699 8.68001 5.8999 9.09001L6.5499 19.16C6.6599 20.68 6.6999 21.25 8.7899 21.25H15.2099C17.3099 21.25 17.3499 20.68 17.4499 19.16L18.0999 9.09001C18.1299 8.68001 18.4899 8.37001 18.8999 8.39001C19.3099 8.42001 19.6299 8.77001 19.5999 9.19001L18.9499 19.26C18.8399 20.82 18.6999 22.75 15.2099 22.75Z" fill="currentColor"></path>
+                    <path d="M13.6601 17.25H10.3301C9.92008 17.25 9.58008 16.91 9.58008 16.5C9.58008 16.09 9.92008 15.75 10.3301 15.75H13.6601C14.0701 15.75 14.4101 16.09 14.4101 16.5C14.4101 16.91 14.0701 17.25 13.6601 17.25Z" fill="currentColor"></path>
+                    <path d="M14.5 13.25H9.5C9.09 13.25 8.75 12.91 8.75 12.5C8.75 12.09 9.09 11.75 9.5 11.75H14.5C14.91 11.75 15.25 12.09 15.25 12.5C15.25 12.91 14.91 13.25 14.5 13.25Z" fill="currentColor"></path>
+                  </svg></div>
+                <div>Remove</div>
+              </a>
+            </div><input type="submit" data-wait="Please wait..." class="submit-button w-button" value="Submit">
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="http://localhost:8000/src/dynamic-fields.js"></script>
+  <script>
+// Scenario 0: Basic Single Group - Exact replica of test2.html functionality
+// This uses the new v3 core with improved button functionality
+
+// Initialize the library with the same configuration as test2.html
+const educationFields = new DynamicFields({
+    // IMPORTANT: Target the specific form container, not the entire document
+    container: document.querySelector('[data-form-container]'),
+    // Basic settings
+    maxFields: 10,          // Maximum 10 education entries (increased for flexibility)
+    minFields: 1,           // Always keep at least 1
+    // Field naming (will auto-increment: education-1-school, education-2-school, etc.)
+    fieldPrefix: 'education',
+    // Animation speed (in milliseconds)
+    animationSpeed: 300,
+    // Validation (optional) - validates existing fields before adding new ones
+    validateOnAdd: false,   // Disabled for better Webflow compatibility
+    // V3 specific options
+    enableErrorLogging: true,
+    enableDebugLogging: true,
+    hideRemoveButtonWhenMinReached: true
+});
+
+// Optional: Listen to events for debugging and user feedback
+educationFields.on('initialized', function(data) {
+    console.log('Dynamic fields initialized successfully');
+});
+
+educationFields.on('fieldAdded', function(data) {
+    console.log('Added education entry, total fields: ' + data.totalFields);
+});
+
+educationFields.on('fieldRemoved', function(data) {
+    console.log('Removed education entry, total fields: ' + data.totalFields);
+});
+
+educationFields.on('maxFieldsReached', function(data) {
+    console.log('Maximum education entries reached: ' + data.maxFields);
+});
+
+educationFields.on('validationFailed', function(data) {
+    console.log('Validation failed: ' + data.message);
+    // You can show user feedback here
+});
+
+// That's it! Your form now supports dynamic add/remove functionality.
+// The script will automatically:
+// - Hide the original template field
+// - Create new fields when "Add" is clicked
+// - Remove fields when "Remove" is clicked
+// - Handle button states and field numbering
+// - Apply smooth animations
+
+console.log('Scenario 0 test loaded: Basic single group (exact replica of test2.html)');
+</script>
+</body>
+</html>

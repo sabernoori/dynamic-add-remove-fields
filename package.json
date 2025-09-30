@@ -1,0 +1,58 @@
+{
+  "name": "dynamic-add-remove-fields",
+  "version": "3.0.0",
+  "description": "A lightweight, flexible JavaScript library for dynamically adding and removing form fields with support for multiple groups and forms",
+  "main": "src/dynamic-fields.js",
+  "files": [
+    "src/",
+    "snippets/",
+    "examples/",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "node server.js",
+    "build": "node scripts/build.js",
+    "publish-package": "node scripts/publish.js",
+    "lint": "echo \"Linting not yet configured\"",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "dynamic-fields",
+    "form-fields",
+    "add-remove-inputs",
+    "javascript",
+    "vanilla-js",
+    "form-manipulation",
+    "dynamic-forms",
+    "field-groups",
+    "form-validation",
+    "ui-components"
+  ],
+  "author": {
+    "name": "sabernoori",
+    "email": "sabernooriusb@gmail.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sabernoori/dynamic-add-remove-fields.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sabernoori/dynamic-add-remove-fields/issues"
+  },
+  "homepage": "https://github.com/sabernoori/dynamic-add-remove-fields#readme",
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "devDependencies": {},
+  "dependencies": {},
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
