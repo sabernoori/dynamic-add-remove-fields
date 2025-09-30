@@ -16,31 +16,61 @@ This library is specifically designed to work seamlessly with **Webflow** withou
 <script src="https://cdn.jsdelivr.net/gh/sabernoori/dynamic-add-remove-fields@v3.0.0/src/dynamic-fields.js"></script>
 ```
 
-2. **Structure Your Form**: Use Webflow's form builder and add these classes/attributes:
-   - Form: Give it an ID (e.g., `contact-form`)
-   - Container div: Add class `field-group` and attribute `data-group-name="your-group-name"`
-   - Add button: Add class `add-field-btn`
-   - Remove button: Add class `remove-field-btn`
+2. **Structure Your Form in Webflow Designer**:
+   
+   **Step 2a: Create the Form**
+   - Drag a Form Block from the Add Panel
+   - Give your form a unique ID (e.g., `contact-form`)
+   - In Form Settings → Element Settings → ID field, enter your form ID
+   
+   **Step 2b: Create the Field Group Container**
+   - Inside the form, add a Div Block
+   - Add class name: `field-group`
+   - In Element Settings → Custom Attributes:
+     - Name: `data-group-name`
+     - Value: `education` (or your preferred group name)
+   
+   **Step 2c: Add Your Input Fields**
+   - Inside the field-group div, add your input fields
+   - Name them with numbers: `education-degree-1`, `education-school-1`, etc.
+   - These will be cloned when users add more fields
+   
+   **Step 2d: Add Control Buttons**
+   - Add a Button element with class: `add-field-btn`
+   - Set button text to "Add Education" (or relevant text)
+   - Add another Button element with class: `remove-field-btn`
+   - Set button text to "Remove"
+   - Set both buttons Type to "Button" (not Submit)
 
-3. **Initialize**: Add this script after the library:
+3. **Initialize the Library**: Add this script in Custom Code → Footer Code (after the library script):
 ```html
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     new DynamicFields({
         formId: 'contact-form',        // Your Webflow form ID
-        groupName: 'your-group-name',  // Match your data-group-name
-        fieldPrefix: 'field'           // Prefix for field names
+        groupName: 'education',        // Match your data-group-name
+        fieldPrefix: 'education'       // Prefix for field names
     });
 });
 </script>
 ```
 
-### Webflow-Specific Benefits
-- ✅ **No Build Process** - Works directly in Webflow
-- ✅ **No Dependencies** - Pure vanilla JavaScript
-- ✅ **Designer Friendly** - Use Webflow's visual form builder
-- ✅ **Responsive** - Inherits your Webflow responsive design
-- ✅ **Form Submissions** - Works with Webflow's native form handling
+**Complete Webflow HTML Structure Example:**
+```html
+<!-- This is what your Webflow structure should look like -->
+<form id="contact-form" class="w-form">
+    <div class="field-group" data-group-name="education">
+        <!-- Your input fields (these get cloned) -->
+        <input type="text" name="education-degree-1" placeholder="Degree" class="w-input">
+        <input type="text" name="education-school-1" placeholder="School" class="w-input">
+        
+        <!-- Control buttons -->
+        <button type="button" class="add-field-btn w-button">Add Education</button>
+        <button type="button" class="remove-field-btn w-button">Remove</button>
+    </div>
+</form>
+```
+
 
 ---
 
